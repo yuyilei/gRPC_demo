@@ -13,7 +13,7 @@ start the client:
     
 ## RUN Book 
 
-Book is more complicated application.
+Book is a  more complicated application.
 
 start the server:
 
