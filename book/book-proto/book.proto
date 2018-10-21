@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package book;
+
+service Book {
+
+    rpc getBookInfo (BookId) returns (BookInfo){}
+
+    rpc getBookList (BookPage) returns (stream BookInfo){}
+
+    rpc postBookList (stream BookInfo) returns (Postresponse){}
+}
+
+message BookId {
+    string id = 1;
+}
+
+message BookInfo {
+    string name = 1;
+    string author = 2;
+    int32 page = 3;
+}
+
+message BookPage {
+    int32 page = 1;
+}
+
+message BookList {
+    int32 count = 1;
+    repeated BookInfo bookinfo = 2;
+}
+
+message Postresponse {
+    string msg = 1;
+}
